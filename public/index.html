@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Parlor Visualizer</title>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body style="padding-top: 2rem; padding-bottom: 2rem">
+    <div class="container">
+        <form>
+            <!-- lake radius -->
+            <div class="form-group row">
+                <label for="lake-radius-form" class="col-sm-2 col-form-label">Lake Radius</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="lake-radius-form" value="350">
+                </div>
+            </div>
+            <!-- icon size -->
+            <div class="form-group row">
+                <label for="icon-size-form" class="col-sm-2 col-form-label">Icon Size</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="icon-size-form" value="5">
+                </div>
+            </div>
+            <!-- start angle -->
+            <div class="form-group row">
+                <label for="start-angle-degree-form" class="col-sm-2 col-form-label">Start Angle</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="start-angle-degree-form" value="90">
+                </div>
+            </div>
+            <!-- cursor size -->
+            <div class="form-group row">
+                <label for="cursor-size-form" class="col-sm-2 col-form-label">Cursor Size</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="cursor-size-form" value="50">
+                </div>
+            </div>
+            <hr>
+            <!-- circumference -->
+            <div class="form-group row">
+                <label for="circumference-form" class="col-sm-2 col-form-label">Circumference</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="circumference-form" value="20">
+                </div>
+            </div>
+            <!-- houses -->
+            <div class="form-group row">
+                <label for="houses-form" class="col-sm-2 col-form-label">Houses</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="houses-form" value="0 2 3 8 12 14 15">
+                </div>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="houses-labels-form" checked>
+                <label class="form-check-label" for="houses-labels-form">
+                    Show Labels
+                </label>
+            </div>
+            <!-- test ice cream parlors -->
+            <div class="form-group row">
+                <label for="test-ices-form" class="col-sm-2 col-form-label">Test Ice Address</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="test-ices-form" value="2 5 14">
+                </div>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="test-ice-labels-form" checked>
+                <label class="form-check-label" for="test-ice-labels-form">
+                    Show Labels
+                </label>
+            </div>
+            <!-- check ice cream parlors -->
+            <div class="form-group row">
+                <label for="check-ices-form" class="col-sm-2 col-form-label">Check Ice Address</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="check-ices-form" value="3 10 17">
+                </div>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check-ice-labels-form" checked>
+                <label class="form-check-label" for="check-ice-labels-form">
+                    Show Labels
+                </label>
+            </div>
+        </form>
+        <hr>
+        <!-- buttons -->
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <button onclick="update_settings();" class="btn btn-primary mb-2">Update Settings</button>
+            </div>
+            <div class="col-sm-2">
+                <button onclick="download();" class="btn btn-primary mb-2">Download</button>
+            </div>
+            <div class="col-sm-2">
+                <button onclick="download(true);" class="btn btn-primary mb-2">Open in new Tab</button>
+            </div>
+        </div>
+        <!-- canvas -->
+        <canvas id="tools-canvas" style="border: 1px solid; width: 800px; height: 70px">
+            Sorry, your browser does not support the canvas tag.
+        </canvas>
+        <canvas id="lake-canvas" style="border: 1px solid; width: 800px; height: 800px">
+            Sorry, your browser does not support the canvas tag.
+        </canvas>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

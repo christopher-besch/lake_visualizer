@@ -1,0 +1,3 @@
+[submodule "public/vendor/bootstrap"]
+	path = public/vendor/bootstrap
+	url = https://github.com/christopher-besch/bootstrap_fork.git
