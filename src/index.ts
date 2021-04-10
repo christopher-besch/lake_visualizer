@@ -343,12 +343,14 @@ class Lake {
 
     // when the mouse is clicked inside the canvas and gets dragged
     on_mouse_drag(e: MouseEvent): void {
-        let cursor = new Circle(this.ctx, e.offsetX, e.offsetY, this.cursor_size, this.tools.get_color(), 0.1);
+        let cursor = new Circle(this.ctx, e.offsetX, e.offsetY, this.cursor_size, this.tools.get_color(), 0.05);
         cursor.draw();
         this.houses.forEach((position) => {
-            if (cursor.is_hit(position.get_x(), position.get_y())) position.change_color(this.tools.get_color());
+            if (cursor.is_hit(position.get_x(), position.get_y())) {
+                position.change_color(this.tools.get_color());
+                position.draw();
+            }
         });
-        this.draw();
     }
 }
 
@@ -362,7 +364,7 @@ class Tools {
 
         // create rectangles for color pallette
         this.color_palette = [];
-        let colors = ["red", "green", "orange", "blue", "black"];
+        let colors = ["red", "green", "yellow", "blue", "purple", "orange", "cyan", "black"];
         for (let i = 0; i < colors.length; ++i) {
             this.color_palette.push(new Rectangle(ctx, 20 + 50 * i, 20, 30, 30, colors[i], 1, "grey"));
             this.color_palette[i].draw();
